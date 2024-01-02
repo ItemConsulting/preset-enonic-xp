@@ -1,0 +1,23 @@
+{
+  "name": "@itemconsulting/preset-enonic-xp",
+  "version": "0.0.1",
+  "description": "Preset for using Storybook with Enonic XP",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p ."
+  },
+  "files": [
+    "dist/**/*",
+    "README.md"
+  ],
+  "author": "Tom Arild Jakobsen <tajakobsen@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "loader-utils": "^3.2.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "webpack": "^5.89.0"
+  }
+}
