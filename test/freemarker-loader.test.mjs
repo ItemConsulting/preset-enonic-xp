@@ -29,7 +29,7 @@ test("get dependencies", (t) => {
   const filePaths = getDependencyFilePaths(source, "");
 
   assert.deepStrictEqual(filePaths, [
-    join("..", "..", "views", "partials", "header", "header.ftl"),
-    join("..", "..", "views", "partials", "footer", "footer.ftl")
+    "../../views/partials/header/header.ftl",
+    "../../views/partials/header/footer.ftl"
   ]);
 });

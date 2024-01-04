@@ -2,6 +2,8 @@
 
 Storybook preset for integrating with Enonic XP
 
+[![npm version](https://badge.fury.io/js/@itemconsulting%2Fpreset-enonic-xp.svg)](https://badge.fury.io/js/@itemconsulting%2Fpreset-enonic-xp)
+
 ## Usage
 
 Install the package in your project.

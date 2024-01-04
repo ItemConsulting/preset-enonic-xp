@@ -5,6 +5,7 @@
     "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+    "declaration": true,
     "skipLibCheck": true,
     "noImplicitThis": false,
     "lib": ["ES2018"],
