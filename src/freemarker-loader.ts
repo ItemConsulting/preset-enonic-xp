@@ -3,10 +3,10 @@ import { urlToRequest, getHashDigest } from "loader-utils";
 
 export default function loader(source: string): string {
   const requires = getDependencyFilePaths(source, this.resourcePath)
-    .map((path) => `require("${path}");`)
+    .map((path) => `require("${escapePathForWindows(path)}");`)
     .join("\n");
 
-  return `${requires}\nexport default "${this.resourcePath}?hash=${getHashDigest(source)}";`;
+  return `${requires}\nexport default "${escapePathForWindows(this.resourcePath)}?hash=${getHashDigest(source)}";`;
 }
 
 export function getDependencyFilePaths(source: string, resourcePath: string): string[] {
@@ -27,4 +27,8 @@ export function getDependencyFilePaths(source: string, resourcePath: string): st
   }
 
   return importFilePaths;
+}
+
+function escapePathForWindows(path: string): string {
+  return path.replace(/\\/g, "\\\\");
 }
