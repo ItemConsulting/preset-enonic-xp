@@ -17,6 +17,15 @@ export function webpackFinal(config: WebpackConfig, options = {}): WebpackConfig
           },
         ],
       },
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: resolve(__dirname, "thymeleaf-loader.js"),
+            options: {},
+          },
+        ],
+      },
     ];
   }
 
