@@ -7,7 +7,7 @@ export default function loader(source: string): string {
     .map((path) => `require("${escapePathForWindows(path)}");`)
     .join("\n");
 
-  return `${requires}\nexport default "${getPathRelativeToResources(this.resourcePath)}"; /* hash=${getHashDigest(
+  return `${requires}\nexport default "${escapePathForWindows(getPathRelativeToResources(this.resourcePath))}"; /* hash=${getHashDigest(
     source,
   )} */`;
 }
