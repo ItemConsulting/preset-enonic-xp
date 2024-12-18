@@ -7,11 +7,16 @@ export default function loader(source: string): string {
     .map((path) => `require("${escapePathForWindows(path)}");`)
     .join("\n");
 
-  return `${requires}\nexport default "${escapePathForWindows(getPathRelativeToResources(this.resourcePath))}"; /* hash=${getHashDigest(
+  // Don't escape for Windows. The exported path is intended for URLs
+  return `${requires}\nexport default "${getPathForURLs(getPathRelativeToResources(this.resourcePath))}"; /* hash=${getHashDigest(
     source,
   )} */`;
 }
 
 function escapePathForWindows(path: string): string {
   return path.replace(/\\/g, "\\\\");
+}
+
+function getPathForURLs(path: string): string {
+  return path.replace(/\\/g, "/");
 }

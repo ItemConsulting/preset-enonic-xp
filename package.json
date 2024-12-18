@@ -1,13 +1,13 @@
 {
   "name": "@itemconsulting/preset-enonic-xp",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Preset for using Storybook with Enonic XP",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
   "scripts": {
     "build": "tsc -p .",
-    "lint": "eslint --cache 'src/**/*.ts'",
+    "lint": "eslint --cache --fix 'src/**/*.ts'",
     "prepublishOnly": "npm run build"
   },
   "files": [
@@ -21,12 +21,12 @@
     "loader-utils": "^3.3.1"
   },
   "devDependencies": {
-    "eslint": "^9.10.0",
+    "eslint": "^9.17.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
-    "prettier": "^3.3.3",
-    "typescript": "^5.6.2",
-    "typescript-eslint": "^8.5.0",
-    "webpack": "^5.94.0"
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.18.1",
+    "webpack": "^5.97.1"
   }
 }
