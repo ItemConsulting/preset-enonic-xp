@@ -13,7 +13,7 @@ export function webpackFinal(config: WebpackConfig): WebpackConfig {
         test: /\.ftl$/,
         use: [
           {
-            loader: resolve(__dirname, "freemarker-loader.js"),
+            loader: resolve(import.meta.dirname, "freemarker-loader.js"),
             options: {},
           },
         ],
@@ -22,7 +22,7 @@ export function webpackFinal(config: WebpackConfig): WebpackConfig {
         test: /\.html$/,
         use: [
           {
-            loader: resolve(__dirname, "thymeleaf-loader.js"),
+            loader: resolve(import.meta.dirname, "thymeleaf-loader.js"),
             options: {},
           },
         ],
