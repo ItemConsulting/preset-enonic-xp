@@ -1,5 +1,11 @@
 # @itemconsulting/preset-enonic-xp
 
+## 0.2.0
+
+### Minor Changes
+
+- f61c713: Remove dependency to @storybook/node-logger
+
 ## 0.1.0
 
 ### Minor Changes
