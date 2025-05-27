@@ -19,20 +19,20 @@
   "author": "Tom Arild Jakobsen <tajakobsen@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@storybook/node-logger": "^8",
     "loader-utils": "^3.3.1"
   },
   "engines": {
     "node": ">=20.11.0 || >= 21.2.0 || >=22"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.28.1",
-    "eslint": "^9.23.0",
-    "eslint-config-prettier": "^10.1.1",
-    "eslint-plugin-prettier": "^5.2.4",
+    "@changesets/cli": "^2.29.4",
+    "@types/node": "^22.15.21",
+    "eslint": "^9.27.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.4.0",
     "prettier": "^3.5.3",
-    "typescript": "^5.8.2",
-    "typescript-eslint": "^8.27.0",
-    "webpack": "^5.98.0"
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.32.1",
+    "webpack": "^5.99.9"
   }
 }
