@@ -1,5 +1,11 @@
 # @itemconsulting/preset-enonic-xp
 
+## 0.3.0
+
+### Minor Changes
+
+- 148b8d8: Resolve _.ftlh and _.ftlx suffix' for Freemarker templates
+
 ## 0.2.0
 
 ### Minor Changes
