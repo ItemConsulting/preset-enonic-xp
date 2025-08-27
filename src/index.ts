@@ -1,3 +1,4 @@
+
 import type { Configuration as WebpackConfig } from "webpack";
 import { resolve } from "path";
 
@@ -9,7 +10,7 @@ export function webpackFinal(config: WebpackConfig): WebpackConfig {
     config.module.rules = [
       ...(config.module?.rules || []),
       {
-        test: /\.ftl$/,
+        test: /\.ftl[hx]?$/,
         use: [
           {
             loader: resolve(import.meta.dirname, "freemarker-loader.js"),
