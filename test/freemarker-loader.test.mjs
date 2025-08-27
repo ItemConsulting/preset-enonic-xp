@@ -1,35 +1,17 @@
-import test from 'node:test';
-import { join } from "path"
-import { strict as assert } from 'node:assert';
-import { getFileMetaData, getDependencyFilePaths } from "../dist/freemarker-loader.js";
-
-test("get file metadata", (t) => {
-  const source = "<h1>Testing</h1>";
-  const resourcePath = "~/code/project/src/main/resources/site/parts/header.ftl"
-
-  const fileMetaData = getFileMetaData(source, resourcePath);
-
-  assert.deepEqual(fileMetaData, {
-    hash: '859e21fa3c351f02',
-    id: 'site/parts/header.ftl',
-    params: {
-      filePath:    join("~", "code", "project", "src", "main", "resources", "site", "parts", "header.ftl"),
-      baseDirPath: join("~", "code", "project", "src", "main", "resources")
-    }
-  });
-});
-
+import test from "node:test";
+import { strict as assert } from "node:assert";
+import { getDependencyFilePaths } from "../dist/storybook-loader-utils.js";
 
 test("get dependencies", (t) => {
   const source = `
-  [#import "../../views/partials/header/header.ftl" as h]
-  [#import "../../views/partials/footer/footer.ftl" as f]
+    [#import "../../views/partials/header/header.ftl" as h]
+    [#import "../../views/partials/footer/footer.ftl" as f]
   `;
 
-  const filePaths = getDependencyFilePaths(source, "");
+  const filePaths = getDependencyFilePaths(source, "", /\[#import "(.*?)".*?]/gi);
 
   assert.deepStrictEqual(filePaths, [
     "../../views/partials/header/header.ftl",
-    "../../views/partials/header/footer.ftl"
+    "../../views/partials/footer/footer.ftl",
   ]);
 });
