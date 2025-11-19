@@ -1,5 +1,11 @@
 # @itemconsulting/preset-enonic-xp
 
+## 0.4.0
+
+### Minor Changes
+
+- 94c3ea7: Add process.env.{RESOURCES_DIR, APP_NAME}
+
 ## 0.3.0
 
 ### Minor Changes
