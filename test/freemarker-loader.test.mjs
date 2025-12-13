@@ -6,12 +6,14 @@ test("get dependencies", (t) => {
   const source = `
     [#import "../../views/partials/header/header.ftl" as h]
     [#import "../../views/partials/footer/footer.ftl" as f]
+    [#include "../../views/partials/body/body.ftlh"]
   `;
 
-  const filePaths = getDependencyFilePaths(source, "", /\[#import "(.*?)".*?]/gi);
+  const filePaths = getDependencyFilePaths(source, "", /\[#(?:import|include) "(.*?)".*?]/gi);
 
   assert.deepStrictEqual(filePaths, [
     "../../views/partials/header/header.ftl",
     "../../views/partials/footer/footer.ftl",
+    "../../views/partials/body/body.ftlh",
   ]);
 });
