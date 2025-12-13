@@ -1,11 +1,12 @@
 import webpack, { type Configuration as WebpackConfig } from "webpack";
 import { resolve } from "path";
 import { readFileSync, existsSync } from "fs";
+import { logger } from "storybook/internal/node-logger";
 
 export function webpackFinal(config: WebpackConfig): WebpackConfig {
   if (config.module) {
-    console.log("=> Enabling Freemarker Loader");
-    console.log("=> Enabling Thymeleaf Loader");
+    logger.info("Enabling Freemarker loader for XP");
+    logger.info("Enabling Thymeleaf loader for XP");
 
     const propertiesPath = resolve("gradle.properties");
     const fileContent = existsSync(propertiesPath) ? readFileSync(propertiesPath, "utf-8") : "";
