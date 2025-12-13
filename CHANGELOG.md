@@ -1,5 +1,11 @@
 # @itemconsulting/preset-enonic-xp
 
+## 0.5.0
+
+### Minor Changes
+
+- 093bccc: Create dependencies by following [#include] in Freemarker
+
 ## 0.4.0
 
 ### Minor Changes
